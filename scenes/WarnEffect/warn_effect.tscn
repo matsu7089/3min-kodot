@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://lxnimav54huq"]
+
+[ext_resource type="Script" path="res://scenes/WarnEffect/warn_effect.gd" id="1_2er1n"]
+[ext_resource type="Texture2D" uid="uid://bgxwq0hp0tjrm" path="res://assets/images/warn.png" id="2_bd6g1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu8v5"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8xx3"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv50b"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnrdo"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wvj"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgj36"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fvdl"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjsxi"]
+atlas = ExtResource("2_bd6g1")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7l7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu8v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8xx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv50b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnrdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgj36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fvdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjsxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="WarnEffect" type="Node2D"]
+z_index = 10
+scale = Vector2(4, 4)
+script = ExtResource("1_2er1n")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_q7l7o")
+frame = 2
+frame_progress = 0.497738
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkcykflk6j7e"]
+
+[ext_resource type="Script" path="res://scenes/EnemyShot/enemy_shot.gd" id="1_l5wge"]
+[ext_resource type="Texture2D" uid="uid://btcru5d4buk6b" path="res://assets/images/enemy_shot_01.png" id="2_af1i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csmpf"]
+size = Vector2(14, 14)
+
+[node name="CellShot" type="Area2D"]
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_l5wge")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_af1i3")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_csmpf")
